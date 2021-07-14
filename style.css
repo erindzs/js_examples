@@ -1,0 +1,15 @@
+#output {
+    padding: 10px;
+}
+.btn {
+    font-size:20px;
+    min-width:40px;
+    margin: 0 10px 10px 10px;
+    border-radius: 10px;
+}
+
+
+.btn.green {
+    background: rgb(157, 211, 157);
+
+}

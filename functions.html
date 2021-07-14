@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <a href="42.html">42</a>
+    <a href="index.html">index</a>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre id="output"></pre>
+
+    <script>
+    
+        function add(text) {
+            let output = document.getElementById('output');
+            let new_line = '\n';
+            output.append(text + new_line);
+        }
+    
+        function a1(a, b) {
+            return a + b;
+        }
+    
+        add(a1(2, "a"));
+    
+        let a2 = function (a) {
+            return a.length;
+        };
+    
+        add(a2('hello world!'));
+    
+        let a3 = function func(a, count) {
+            if (count > 0) {
+                add(a[--count]);
+                func(a, count);
+            }
+        };
+    
+        const array = ['first', 'second', 'third'];
+    
+    a3(array,a2(array));
+
+    let a4 = (b, c) => {
+        return b- c;
+    };
+
+    add(a4(8,5));
+    /*************************************/
+
+    function b1(callback){
+        add("Hello");
+        callback();
+    }
+
+    b1(function (){
+        add("World!")
+    });
+    
+let count = 5;
+
+const run = function () {
+    const d = new Date();
+    console.log('+' + d.getTime());
+    if (count--) {
+        console.log(count);
+        timeout();
+    }
+
+};
+const timeout = function () {
+    setTimeout(run, 1500);
+}
+
+timeout();
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+

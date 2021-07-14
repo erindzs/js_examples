@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <a href="functions.html">functions</a>
+    <a href="index.html">index</a>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   
+    
+    <form action="" onsubmit="func1(event, this);">
+        <input id="number" type="number" onkeypress="console.log(this)">
+    </form>
+    
+  
+
+    <div id="output"></div>
+    <button class="btn" onclick="add(++val)">+</button>
+    <button class="btn minus">-</button>
+    
+    <script>
+        //document.querySelector('.minus').remove();
+
+    
+        let val = 42;
+        let i = 0;
+        let output = document.getElementById('output');
+        let button = document.createElement('button');
+        button.classList.add('btn');
+
+
+        document.querySelector('.minus').addEventListener('click',function(){
+            document.querySelector('#_' + val--).remove()
+        });
+    
+        function func1(event, form) {
+            event.preventDefault();
+            let input = form.querySelector('#number');
+            val = input.value;
+            input.value = '';
+            console.log(input);
+            output.textContent = '';
+            run();
+        }
+    
+        function add(id) {
+            let new_button = button.cloneNode();
+            if (id % 3 == 0) {
+                new_button.classList.add('green');
+            }
+            if (id % 2 == 0) {
+                new_button.setAttribute('onclick', 'this.textContent++');
+            }
+    
+            new_button.textContent = id;
+            new_button.id = "_"+id;
+            //new_button.setAttribute('id', id);
+            output.append(new_button);
+        }
+    
+        function run() {
+            if (++i <= val) {
+                add(i);
+                run();
+            }
+            else {
+                i = 0;
+            }
+        }
+    
+        run();
+    
+    
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <a href="42.html">42</a>
+    <a href="functions.html">functions</a>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<a href="#" onclick="alert('Hello World! #1')">Alert</a>
+
+<pre id="output"></pre>
+
+<script>
+    console.log('Hellow World #2');
+    let message = "This is ";
+
+    const A = "1";
+    console.log(A);
+
+    var b = 2;
+    b++;
+    console.log('b',b);
+
+   
+
+    var output = document.getElementById('output');
+    add('first text', output);
+
+    console.log(output);
+
+    function add(text, output){
+        var new_line = '\n';
+        output.append(text + new_line);
+    }
+
+
+    {
+        let a1 = 'a1 let';
+        var b1 = 'b1 var'
+
+        console.log(b1);
+    }
+
+
+    add('new text', output);
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
